@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+// Load Simplon Norm locally
+const simplonNorm = localFont({
+  src: '../../fonts/simplon-norm.woff2',
+  variable: '--font-simplon',
+  display: 'swap',
+});
+
+// Load Adobe Caslon Pro locally
+const adobeCaslon = localFont({
+  src: '../../fonts/adobe-caslon-pro.woff2',
+  variable: '--font-caslon',
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${simplonNorm.variable} ${adobeCaslon.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
