@@ -62,9 +62,9 @@ export default function Header() {
       </header>
 
       <div className="w-full px-4.25 py-4 lg:hidden">
-        <span className="text-gray-400 text-xs font-semibold tracking-widest">HOME</span>
+        <span className="text-gray-400 text-xs tracking-widest">HOME</span>
         <span className="text-gray-300 text-xs mx-2">|</span>
-        <span className="text-black text-xs font-semibold tracking-widest">SHOP</span>
+        <span className="text-black text-xs tracking-widest">SHOP</span>
       </div>
     </>
   );
