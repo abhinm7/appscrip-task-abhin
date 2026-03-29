@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import ShopLayout from "./components/ShopLayout"
+import Footer from "./components/Footer"
 
 export const metadata: Metadata = {
   title: "Discover Our Products | Premium Store",
@@ -61,7 +62,7 @@ export default async function Home() {
           <Hero />
           <ShopLayout products={products} />
         </main>
-
+        <Footer />
       </div>
     </>
   )

@@ -11,7 +11,7 @@ const inter = Inter({
 
 // Load Simplon Norm locally
 const simplonNorm = localFont({
-  src: '../../fonts/simplon-norm.woff2',
+  src: '../../fonts/simplon.woff',
   variable: '--font-simplon',
   display: 'swap',
 });
