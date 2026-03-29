@@ -40,7 +40,7 @@ export default function Header() {
             <ProfileIcon className="hidden lg:block w-6 h-6" />
 
             <span className="hidden lg:flex items-center gap-1 text-sm font-semibold cursor-pointer">
-              ENG <ArrowDown />
+              ENG <ArrowDown direction="down" />
             </span>
           </div>
 
