@@ -50,7 +50,7 @@ export default function Header() {
           className="hidden lg:flex w-full justify-center py-4 border-b border-gray-100 px-24"
           aria-label="Main Navigation"
         >
-          <ul className="flex items-center gap-12 text-sm font-bold tracking-wider text-gray-900">
+          <ul className="flex items-center gap-16 text-sm font-bold leading-[100%] tracking-[1px] text-[20px]  text-gray-900">
             <li><Link href="/shop" className="hover:text-gray-600 transition-colors">SHOP</Link></li>
             <li><Link href="/skills" className="hover:text-gray-600 transition-colors">SKILLS</Link></li>
             <li><Link href="/stories" className="hover:text-gray-600 transition-colors">STORIES</Link></li>
