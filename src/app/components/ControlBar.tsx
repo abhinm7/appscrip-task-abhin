@@ -7,7 +7,7 @@ interface ControlBarProps {
 
 export default function ControlBar({ isSidebarOpen, toggleSidebar }: ControlBarProps) {
     return (
-        <div className="w-full px-4.25 lg:px-24 py-4 border-y border-gray-200 mb-8 bg-white">
+        <div className="w-full px-4.25 lg:px-24 py-4 border-y border-gray-200 mb-8">
 
             {/* Desktop Layout */}
             <div className="hidden lg:flex justify-between items-center w-full">
