@@ -1,3 +1,4 @@
+import SortDropdown from "./Dropdown";
 import ArrowDown from "./icons/ArrowDown";
 
 interface ControlBarProps {
@@ -7,7 +8,7 @@ interface ControlBarProps {
 
 export default function ControlBar({ isSidebarOpen, toggleSidebar }: ControlBarProps) {
     return (
-        <div className="w-full px-4.25 lg:px-24 py-4 border-y border-gray-200 mb-8">
+        <div className="w-full py-1 lg:py-6 border-y border-gray-200 mb-3">
 
             {/* Desktop Layout */}
             <div className="hidden lg:flex justify-between items-center w-full">
@@ -29,9 +30,9 @@ export default function ControlBar({ isSidebarOpen, toggleSidebar }: ControlBarP
                     </button>
                 </div>
 
-                <button className="text-[16px] font-bold text-gray-900 flex items-center gap-2">
-                    RECOMMENDED <ArrowDown direction="down" />
-                </button>
+                <div className="hidden lg:block">
+                    <SortDropdown />
+                </div>
             </div>
 
             {/* Small Screen Layout */}

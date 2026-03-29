@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="w-full flex flex-col items-center justify-center text-center px-4 lg:px-24 lg:py-16">
+    <section className="w-full flex flex-col items-center justify-center text-center px-4 lg:px-24 lg:py-16 mb-4">
 
       <h1 className="font-simplon text-[24px] lg:text-[60px] leading-[100%] uppercase text-black mb-4 tracking-[0px]">
         DISCOVER OUR PRODUCTS

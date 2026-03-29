@@ -42,8 +42,8 @@ export default function FilterSidebar() {
   ];
 
   return (
-    <div className="w-full pr-0 lg:pr-8">
-      <label className="flex items-center gap-3 cursor-pointer mb-2 border-b border-gray-200 pb-6">
+    <div className="w-full pt-4 pr-0 lg:pr-8">
+      <label className="flex items-center gap-3 cursor-pointer border-b border-gray-200 pb-6">
         <input 
           type="checkbox" 
           className="w-5 h-5 accent-black border-gray-300 rounded-sm cursor-pointer" 
