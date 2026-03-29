@@ -1,18 +1,18 @@
+import ArrowDown from "./icons/ArrowDown";
+
 function FilterAccordion({ title }: { title: string }) {
   return (
     <details className="group border-b border-gray-200 py-5 [&_summary::-webkit-details-marker]:hidden">
       <summary className="flex justify-between items-center cursor-pointer list-none select-none">
         <div className="flex flex-col">
-          <span className="font-bold text-gray-900 text-[14px] tracking-wide uppercase">
+          <span className="font-bold text-gray-900 text-[14px] lg:text-[18px] tracking-wide uppercase">
             {title}
           </span>
-          <span className="text-gray-500 text-[14px] mt-1">All</span>
+          <span className="text-gray-500 text-[14px] lg:text-[18px] mt-1">All</span>
         </div>
         
         <span className="transition-transform duration-300 group-open:rotate-180 text-gray-900">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M4 6l4 4 4-4" />
-          </svg>
+          <ArrowDown direction='down'/>
         </span>
       </summary>
       
