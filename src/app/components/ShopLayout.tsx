@@ -17,7 +17,8 @@ export default function ShopLayout({ products }: { products: any[] }) {
 
   return (
     <section className='w-full px-1 lg:px-24'>
-      <ControlBar 
+      <ControlBar  
+        productCount={products.length}
         isSidebarOpen={isSidebarOpen} 
         toggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)} 
       />

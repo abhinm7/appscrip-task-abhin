@@ -2,11 +2,12 @@ import SortDropdown from "./Dropdown";
 import ArrowDown from "./icons/ArrowDown";
 
 interface ControlBarProps {
+    productCount: number;
     isSidebarOpen: boolean;
     toggleSidebar: () => void;
 }
 
-export default function ControlBar({ isSidebarOpen, toggleSidebar }: ControlBarProps) {
+export default function ControlBar({ productCount, isSidebarOpen, toggleSidebar }: ControlBarProps) {
     return (
         <div className="w-full py-1 lg:py-6 border-y border-gray-200 mb-3">
 
@@ -14,7 +15,7 @@ export default function ControlBar({ isSidebarOpen, toggleSidebar }: ControlBarP
             <div className="hidden lg:flex justify-between items-center w-full">
                 <div className="flex items-center gap-12">
                     <span className="text-[18px] font-bold text-gray-900 tracking-wider">
-                        3425 ITEMS
+                        {productCount} ITEMS
                     </span>
                     <button
                         onClick={toggleSidebar}
