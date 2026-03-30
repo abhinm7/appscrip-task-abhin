@@ -15,15 +15,21 @@ export const metadata: Metadata = {
  Improves SEO + performance
 */
 async function getProducts() {
-  const res = await fetch("https://fakestoreapi.com/products", {
-    next: { revalidate: 3600 }, // cache for 1 hour
-  })
+  try {
+    const res = await fetch("https://fakestoreapi.com/products", {
+      next: { revalidate: 3600 },
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch products")
+    if (!res.ok) {
+      console.warn("Fakestore API blocked the Vercel build server. Bypassing crash.");
+      return [];
+    }
+
+    return res.json();
+  } catch (error) {
+    console.warn("Network error during Vercel build:", error);
+    return [];
   }
-
-  return res.json()
 }
 
 export default async function Home() {
