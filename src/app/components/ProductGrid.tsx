@@ -1,7 +1,6 @@
 import ProductCard from './ProductCard';
 
 export default function ProductGrid({ products }: { products: any[] }) {
-  console.log(products)
   // If the API fails or is loading
   if (!products || products.length === 0) {
     return <div className="text-center py-20 font-bold">No products found.</div>;

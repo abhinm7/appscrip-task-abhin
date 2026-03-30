@@ -17,24 +17,24 @@ export default async function Home() {
   const res = await GET()
   const products = await res.json()
 
-  // const structuredData = {
-  //   "@context": "https://schema.org",
-  //   "@type": "ItemList",
-  //   itemListElement: products.map((product: any, index: number) => ({
-  //     "@type": "ListItem",
-  //     position: index + 1,
-  //     url: `https://yourdomain.com/product/${product.id}`,
-  //     name: product.title,
-  //     image: product.image,
-  //   })),
-  // }
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: products.map((product: any, index: number) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `https://yourdomain.com/product/${product.id}`,
+      name: product.title,
+      image: product.image,
+    })),
+  }
 
   return (
     <>
-      {/* <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      /> */}
+      />
       <div className="min-h-screen bg-white flex flex-col">
         <Header />
         <main className="flex-1">
