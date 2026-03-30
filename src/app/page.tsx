@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
+import { GET } from "./api/products/route"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import ShopLayout from "./components/ShopLayout"
 import Footer from "./components/Footer"
 
-export const dynamic = "force-dynamic"; // force dynamic ssr
+export const dynamic = "force-dynamic"
 
 export const metadata: Metadata = {
   title: "Discover Our Products | Premium Store",
@@ -12,58 +13,29 @@ export const metadata: Metadata = {
     "Browse our premium product collection. Filter by category, style, and preference.",
 }
 
-/*
- Server-side product fetching
- Improves SEO + performance
-*/
-async function getProducts() {
- try {
-    const res = await fetch("https://fakestoreapi.com/products", {
-      cache: "no-store", 
-    });
-
-    if (!res.ok) {
-      // Return empty array instead of throwing to prevent the 500 error crash
-      return []; 
-    }
-
-    return res.json();
-  } catch (error) {
-    return []; 
-  }
-}
-
 export default async function Home() {
-  const products = await getProducts()
+  const res = await GET()
+  const products = await res.json()
 
-  /*
-   Structured data for Google
-   Helps search engines understand this page is product listing
-  */
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    itemListElement: products.map((product: any, index: number) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      url: `https://yourdomain.com/product/${product.id}`,
-      name: product.title,
-      image: product.image,
-    })),
-  }
+  // const structuredData = {
+  //   "@context": "https://schema.org",
+  //   "@type": "ItemList",
+  //   itemListElement: products.map((product: any, index: number) => ({
+  //     "@type": "ListItem",
+  //     position: index + 1,
+  //     url: `https://yourdomain.com/product/${product.id}`,
+  //     name: product.title,
+  //     image: product.image,
+  //   })),
+  // }
 
   return (
     <>
-      {/* JSON-LD Structured data */}
-      <script
+      {/* <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
-        }}
-      />
-
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      /> */}
       <div className="min-h-screen bg-white flex flex-col">
-        {/* navbar */}
         <Header />
         <main className="flex-1">
           <Hero />
