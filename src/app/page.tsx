@@ -17,16 +17,20 @@ export const metadata: Metadata = {
  Improves SEO + performance
 */
 async function getProducts() {
-  // Use 'no-store' so the server fetches fresh data on every page load
-  const res = await fetch("https://fakestoreapi.com/products", {
-    cache: "no-store", 
-  })
+ try {
+    const res = await fetch("https://fakestoreapi.com/products", {
+      cache: "no-store", 
+    });
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch products")
+    if (!res.ok) {
+      // Return empty array instead of throwing to prevent the 500 error crash
+      return []; 
+    }
+
+    return res.json();
+  } catch (error) {
+    return []; 
   }
-
-  return res.json()
 }
 
 export default async function Home() {
