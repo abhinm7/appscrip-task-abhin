@@ -12,7 +12,7 @@ import ArrowDown from './icons/ArrowDown';
 
 export default function Footer() {
     return (
-        <footer className="w-full bg-black text-white pt-12 lg:pt-16 mt-10 pb-6 px-4.25 lg:px-24">
+        <footer id='contact' className="w-full bg-black text-white pt-12 lg:pt-16 mt-10 pb-6 px-4.25 lg:px-24">
 
             {/* --- TOP SECTION --- */}
             <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-0">

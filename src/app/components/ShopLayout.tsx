@@ -29,7 +29,7 @@ export default function ShopLayout({ products }: { products: any[] }) {
           </aside>
         )}
 
-        <div className="flex-1">
+        <div id='shop' className="flex-1">
           <ProductGrid products={products} />
         </div>
       </div>

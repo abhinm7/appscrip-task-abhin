@@ -51,11 +51,11 @@ export default function Header() {
           aria-label="Main Navigation"
         >
           <ul className="flex items-center gap-16 text-sm font-bold leading-[100%] tracking-[1px] text-[20px]  text-gray-900">
-            <li><Link href="/shop" className="hover:text-gray-600 transition-colors">SHOP</Link></li>
-            <li><Link href="/skills" className="hover:text-gray-600 transition-colors">SKILLS</Link></li>
-            <li><Link href="/stories" className="hover:text-gray-600 transition-colors">STORIES</Link></li>
-            <li><Link href="/about" className="hover:text-gray-600 transition-colors">ABOUT</Link></li>
-            <li><Link href="/contact" className="hover:text-gray-600 transition-colors">CONTACT US</Link></li>
+            <li><Link href="#shop" className="hover:text-gray-600 transition-colors">SHOP</Link></li>
+            <li><Link href="/" className="hover:text-gray-600 transition-colors">SKILLS</Link></li>
+            <li><Link href="/" className="hover:text-gray-600 transition-colors">STORIES</Link></li>
+            <li><Link href="#contact" className="hover:text-gray-600 transition-colors">ABOUT</Link></li>
+            <li><Link href="#contact" className="hover:text-gray-600 transition-colors">CONTACT US</Link></li>
           </ul>
         </nav>
 
