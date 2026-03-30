@@ -8,7 +8,7 @@ import Paypal from './icons/Paypal';
 import AmexIcon from './icons/AmexIcon';
 import ApplePay from './icons/ApplePay';
 import ShopPay from './icons/ShopPay';
-// (Paste the dummy icon components here if you don't have them in separate files yet)
+import ArrowDown from './icons/ArrowDown';
 
 export default function Footer() {
     return (
@@ -34,7 +34,7 @@ export default function Footer() {
                             placeholder="Enter your e-mail..."
                             className="px-4 py-3 w-full max-w-70 bg-white text-black outline-none"
                         />
-                        <button className="px-6 py-3 border border-white/50 text-white/50 hover:text-white hover:border-white transition-colors uppercase font-semibold text-[14px]">
+                        <button className="px-6 py-3 border border-white/50 rounded-sm text-white/50 hover:text-white hover:border-white transition-colors uppercase font-semibold text-[14px]">
                             Subscribe
                         </button>
                     </div>
@@ -43,15 +43,14 @@ export default function Footer() {
                 {/* Right: Contact & Currency */}
                 <div className="w-full lg:w-1/2 flex flex-col gap-6 lg:gap-8 lg:pl-24">
 
-                    {/* Contact Block (Stacked on mobile, inline on desktop) */}
-                    <div className="flex flex-col gap-2 border-b border-white/20 lg:border-none pb-6 lg:pb-0">
+                    <div className="flex flex-col gap-2 border-b border-[#E5E5E5] lg:border-none pb-6 lg:pb-0">
                         <h3 className="font-bold text-[16px] lg:text-[20px] uppercase tracking-wide block lg:hidden mb-2">
                             Call Us
                         </h3>
                         <h3 className="font-bold text-[16px] lg:text-[20px] uppercase tracking-wide hidden lg:block">
                             Contact Us
                         </h3>
-                        <div className="flex font-simplon flex-col lg:flex-row lg:items-center gap-2 lg:gap-4 text-[14px]">
+                        <div className="flex font-simplon flex-row items-center gap-2 lg:gap-4 text-[14px]">
                             <span>+44 221 133 5360</span>
                             <span className="hidden lg:block">|</span>
                             <span className="block lg:hidden text-white/60 text-[10px]">♦</span>
@@ -60,7 +59,7 @@ export default function Footer() {
                     </div>
 
                     {/* Currency Block */}
-                    <div className="flex flex-col gap-2 border-b border-white/20 lg:border-none pb-6 lg:pb-0">
+                    <div className="flex flex-col gap-2 border-b-2 border-white lg:border-none pb-6 lg:pb-0">
                         <h3 className="font-bold text-[16px] lg:text-[20px] uppercase tracking-wide">
                             Currency
                         </h3>
@@ -74,9 +73,7 @@ export default function Footer() {
                 </div>
             </div>
 
-            <hr className="border-white/20 my-8 hidden lg:block" />
-
-            {/* --- BOTTOM SECTION --- */}
+            <hr className="border-white my-8 hidden lg:block" />
 
             {/* DESKTOP LAYOUT (Grid) */}
             <div className="hidden lg:flex justify-between items-start">
@@ -125,10 +122,12 @@ export default function Footer() {
 
             {/* MOBILE LAYOUT (Accordions) */}
             <div className="flex flex-col lg:hidden w-full">
-                <details className="group border-b border-white/20 py-4 [&_summary::-webkit-details-marker]:hidden">
+                <details className="group border-b border-[#E5E5E5] py-4 [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex justify-between items-center font-bold text-[16px] uppercase tracking-wide cursor-pointer">
                         mettā muse
-                        <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                        <span className="transition-transform duration-300 group-open:rotate-180">
+                            <ArrowDown direction="down" />
+                        </span>
                     </summary>
                     <ul className="pt-4 flex flex-col gap-3 text-[14px] text-white/80">
                         <li><Link href="#">About Us</Link></li>
@@ -140,10 +139,12 @@ export default function Footer() {
                     </ul>
                 </details>
 
-                <details className="group border-b border-white/20 py-4 [&_summary::-webkit-details-marker]:hidden">
+                <details className="group border-b border-[#E5E5E5] py-4 [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex justify-between items-center font-bold text-[16px] uppercase tracking-wide cursor-pointer">
                         Quick Links
-                        <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                        <span className="transition-transform duration-300 group-open:rotate-180">
+                            <ArrowDown direction="down" />
+                        </span>
                     </summary>
                     <ul className="pt-4 flex flex-col gap-3 text-[14px] text-white/80">
                         <li><Link href="#">Orders & Shipping</Link></li>
@@ -156,10 +157,12 @@ export default function Footer() {
                     </ul>
                 </details>
 
-                <details className="group border-b border-white/20 py-4 [&_summary::-webkit-details-marker]:hidden">
+                <details className="group border-b border-[#E5E5E5] py-4 [&_summary::-webkit-details-marker]:hidden">
                     <summary className="flex justify-between items-center font-bold text-[16px] uppercase tracking-wide cursor-pointer">
                         Follow Us
-                        <span className="transition-transform duration-300 group-open:rotate-180">▼</span>
+                        <span className="transition-transform duration-300 group-open:rotate-180">
+                            <ArrowDown direction="down" />
+                        </span>
                     </summary>
                     <div className="pt-4 flex items-center gap-4">
                         <InstagramIcon />
@@ -171,7 +174,7 @@ export default function Footer() {
                 <div className="flex flex-col gap-4 mt-6">
                     <h3 className="font-bold text-[16px] uppercase tracking-wide">mettā muse Accepts</h3>
                     <div className="flex items-center gap-2 flex-wrap">
-                        <GpayIcon /> <MaterCard /> <Paypal /> <AmexIcon /> <ApplePay /> <ShopPay />
+                        <GpayIcon /> <MaterCard /> <Paypal /> <AmexIcon /> <ShopPay />
                     </div>
                 </div>
             </div>
