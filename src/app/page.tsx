@@ -4,6 +4,8 @@ import Hero from "./components/Hero"
 import ShopLayout from "./components/ShopLayout"
 import Footer from "./components/Footer"
 
+export const dynamic = "force-dynamic"; // force dynamic ssr
+
 export const metadata: Metadata = {
   title: "Discover Our Products | Premium Store",
   description:
@@ -15,21 +17,16 @@ export const metadata: Metadata = {
  Improves SEO + performance
 */
 async function getProducts() {
-  try {
-    const res = await fetch("https://fakestoreapi.com/products", {
-      next: { revalidate: 3600 },
-    });
+  // Use 'no-store' so the server fetches fresh data on every page load
+  const res = await fetch("https://fakestoreapi.com/products", {
+    cache: "no-store", 
+  })
 
-    if (!res.ok) {
-      console.warn("Fakestore API blocked the Vercel build server. Bypassing crash.");
-      return [];
-    }
-
-    return res.json();
-  } catch (error) {
-    console.warn("Network error during Vercel build:", error);
-    return [];
+  if (!res.ok) {
+    throw new Error("Failed to fetch products")
   }
+
+  return res.json()
 }
 
 export default async function Home() {
