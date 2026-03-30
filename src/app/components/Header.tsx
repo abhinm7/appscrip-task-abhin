@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <>
       <header className="w-full bg-white">
-        <div className="w-full px-4.25 lg:px-24 h-16 md:h-20 flex items-center justify-between border-b border-gray-100">
+        <div className="w-full px-4.25 lg:px-24 h-16 md:h-20 flex items-center justify-between">
 
           {/* Left */}
           <div className="flex items-center gap-2 shrink-0">
